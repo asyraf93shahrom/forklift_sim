@@ -3,7 +3,7 @@ this package provide simulation of forklift in rviz and gazebo
 
 # clone package in catkin
 cd catkin_ws/src
-git clone 
+git clone https://github.com/asyraf93shahrom/forklift_sim.git
 
 # Run the simulation (gazebo and rviz)
 roslaunch forklift_sim forklift.launch
