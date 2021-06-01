@@ -285,7 +285,7 @@
 	</link>
 
 	<!-- main chasis + FR wheel joining-->
-	<joint name="FRwheel" type="continuous">
+	<joint name="FR_joint" type="continuous">
 		<axis xyz="0 1 0"/>
         <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
 		<parent link="base_link"/>
@@ -319,7 +319,7 @@
 	</link>
 
 	<!-- main chasis + RR wheel joining-->
-	<joint name="RRwheel" type="continuous">
+	<joint name="RR_joint" type="continuous">
 		<axis xyz="0 1 0"/>
         <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
 		<parent link="base_link"/>
@@ -353,7 +353,7 @@
 	</link>
 
 	<!-- main chasis + FL wheel joining-->
-	<joint name="FLwheel" type="continuous">
+	<joint name="FL_joint" type="continuous">
 		<axis xyz="0 1 0"/>
         <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
 		<parent link="base_link"/>
@@ -387,7 +387,7 @@
 	</link>
 
 	<!-- main chasis + RL wheel joining-->
-	<joint name="RLwheel" type="continuous">
+	<joint name="RL_joint" type="continuous">
 		<axis xyz="0 1 0"/>
         <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
 		<parent link="base_link"/>
@@ -622,6 +622,46 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
     <joint name="fork_joint"> <!-- refer to the name joint-->
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="FR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="FR_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="FR_joint"> <!-- refer to the name joint-->
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="RR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="RR_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="RR_joint"> <!-- refer to the name joint-->
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="FL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="FL_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="FL_joint"> <!-- refer to the name joint-->
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="RL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="RL_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="RL_joint"> <!-- refer to the name joint-->
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
   </transmission>
